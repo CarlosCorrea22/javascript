@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        body {
+            background-color: rgba(0, 81, 255, 0.384);
+        }
+
+        main {
+            line-height: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px;
+            margin-bottom: 50px;
+        }
+
+        .container > p {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        input#butao {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1>Teste de Nacionalidade</h1>
+            <p>Seu País de nascença <input type="text" name="txtpais" id="txtpais"></p>
+            <input type="button" value="Verificar" id="botao">
+            <div id="res">
+            </div>
+        </div>
+    </main>
+    <script>
+        var clicou = document.getElementById('botao')
+        clicou.addEventListener('click', nacionalidade)
+
+        function nacionalidade() {
+            var pais = document.getElementById('txtpais')
+            var res = document.getElementById('res')
+            var nac = pais.value
+            res.innerHTML = `<p>Seu país de origem é <strong>${nac}</strong></p>`
+
+            if (nac == "brasil" || nac == "Brasil") {
+                res.innerHTML += `Você nasceu no <strong>${nac}</strong>, então é <strong>brasileiro</strong>`
+            } else {
+                res.innerHTML += `Você nasceu em ${nac}, então é <strong>estrangeiro</strong>`
+            }
+        }
+    </script>
+</body>
+</html>
