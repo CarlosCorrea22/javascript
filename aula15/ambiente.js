@@ -12,6 +12,8 @@ if (pos == -1) {
 }
 
 /*
+Para apresentar uma mensagem em espaços vazios em arrays
+ 
 var vetor = [5,4,3,900,8000]
 vetor[8] = 9   // Dei push em três posições a mais que o limite do meu vetor
 
